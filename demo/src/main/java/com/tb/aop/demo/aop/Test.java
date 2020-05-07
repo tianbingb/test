@@ -1,24 +1,30 @@
 package com.tb.aop.demo.aop;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
+
+
 
 /**
- * 描述 测试
- * @Author: tb
- * @param
- * @Date: 2020-05-06
- * @return
+ * @author tb
  */
 @RestController
+@RequestMapping("/Test")
+@Transactional(rollbackFor = Exception.class)
 public class Test {
 
-
-
     @MyLog(desc = "测试aop")
-    @GetMapping(value = "/test")
-    private void Test(){
+    @GetMapping(value = "/aopTest")
+    public void Test(String a,String b){
 
         System.out.println("啦啦啦");
     }
+
+
+
+
+
+
+
+
 }

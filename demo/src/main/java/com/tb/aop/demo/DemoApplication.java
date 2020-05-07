@@ -11,7 +11,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @Date: 2020-05-06
  * @return
  */
-@EnableAspectJAutoProxy(proxyTargetClass =true)
 @SpringBootApplication
 public class DemoApplication {
 
